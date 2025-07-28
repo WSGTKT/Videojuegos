@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Zona Gamer</title>
+  <title>GameZona</title>
   <style>
     body {
       background-color: #1a1a1a;
@@ -45,9 +45,33 @@
     }
   </style>
 </head>
+
+<body>
+  <h1>🎮 Bienvenido a Zona Gamer</h1>
+  <p>Ingresa tu usuario y contraseña</p>
+
+  <input type="text" id="usuario" placeholder="Usuario"><br>
+  <input type="password" id="contraseña" placeholder="Contraseña"><br>
+  <button onclick="iniciarSesion()">Ingresar</button>
+
+  <script>
+    function iniciarSesion() {
+      const user = document.getElementById("usuario").value;
+      const pass = document.getElementById("contraseña").value;
+
+      // Usuario y contraseña predefinidos
+      if (user === "gamer" && pass === "1234") {
+        window.location.href = "index.html"; // redirige a la página principal
+      } else {
+        alert("Usuario o contraseña incorrectos.");
+      }
+    }
+  </script>
+</body>
+
 <body>
   <header>
-    <h1>🎮 Zona Gamer</h1>
+    <h1>🎮GameZona</h1>
     <nav>
       <a href="#">Inicio</a>
       <a href="#">Catálogo</a>
