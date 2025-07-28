@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Zona Gamer</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+    }
+    header {
+      padding: 20px;
+      background-color: #ff0055;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+    }
+    .juego {
+      border: 1px solid #555;
+      padding: 10px;
+      margin: 10px auto;
+      width: 60%;
+      background-color: #2a2a2a;
+    }
+    button {
+      background-color: #00c3ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #0099cc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Zona Gamer</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Noticias</a>
+      <a href="#">Comunidad</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Juegos Destacados</h2>
+    <div class="juego">
+      <h3>Retro Racer</h3>
+      <p>Corre a toda velocidad en este clásico arcade de carreras.</p>
+    </div>
+    <div class="juego">
+      <h3>Pixel Quest</h3>
+      <p>Explora un mundo lleno de secretos en este RPG pixelado.</p>
+    </div>
+
+    <div id="mas-juegos"></div>
+
+    <button onclick="mostrarMasJuegos()">Ver más juegos</button>
+  </section>
+
+  <script>
+    function mostrarMasJuegos() {
+      const contenedor = document.getElementById('mas-juegos');
+      const juegosExtra = [
+        {
+          titulo: 'Neon Ninja',
+          descripcion: 'Combate en las sombras en este juego de plataformas brillante.'
+        },
+        {
+          titulo: 'Space Duel',
+          descripcion: 'Desafía a tus amigos en intensas batallas galácticas multijugador.'
+        }
+      ];
+
+      juegosExtra.forEach(juego => {
+        const div = document.createElement('div');
+        div.className = 'juego';
+        div.innerHTML = `<h3>${juego.titulo}</h3><p>${juego.descripcion}</p>`;
+        contenedor.appendChild(div);
+      });
+
+      // Desactivar el botón
+      document.querySelector('button').disabled = true;
+      document.querySelector('button').innerText = '¡Más juegos cargados!';
+    }
+  </script>
+</body>
+</html>
